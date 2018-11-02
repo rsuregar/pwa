@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ff6600" />
+  <link rel="icon" href="../images/33717396.jpg">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+
+  <title>Mobile Map</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/modistyle.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+  <link rel="stylesheet" href="../project2/leafletjs/leaflet.css"/>
+  <script src="../project2/leafletjs/leaflet.js"></script>
+  <style type="text/css">
+  .modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+  color: #333333;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+  color: #333333;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: #000;
+}
+
+input {
+    width: 100%;
+} 
+
+
+.map-input{
+	width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 480px){
+	.modal-window > div {
+  max-width: 300px;
+  
+}
+}
+  
+  </style>
+
+
+</head>
+<body class="body">
+	<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <div>
+      <form>
+    <h2>Tambah Map</h2>
+    Nama Lokasi:<br>
+    <input type='text' data-key='name' class='map-input'><br>
+    Latitude:<br>
+    <input type='text' data-key='lat' class='map-input'><br>
+    Longitude:<br>
+    <input type='text' data-key='long' class='map-input'><br>
+    Review:<br>
+    <input type='text' data-key='review' class='map-input'><br>
+    Skor:<br>
+    <input type='text' data-key='skor' class='map-input'><br>
+    Gambar:<br>
+    <input type='text' data-key='img' class='map-input'><br>
+    <button type='button' id="add-map-btn">add map</button>
+ </form>
+    </div>
+    </div>
+</div>
+        <div class="container">
+             
+             <div class="header">
+                <img style="max-width: 100%;max-height: 100%;" src="../images/mws.png">
+              </div>
+
+              <div class='menu'>
+                <a href="/"><img class="icon-img" src="https://image.flaticon.com/icons/png/512/660/660699.png"><span class="menu-title">Home</span></a>
+                <a href="../project1/"><img class="icon-img" src="https://image.flaticon.com/icons/svg/190/190708.svg"><span class="menu-title"> Calculator</span></a>
+                <a href="../project2/"><img class="icon-img" src="https://image.flaticon.com/icons/svg/265/265725.svg"><span class="menu-title"> Mapbox</span></a>
+                <a href="/project4/"><img class="icon-img" src="https://image.flaticon.com/icons/png/512/1072/1072368.png"><span class="menu-title"> Map Review</span></a>
+                <a href="../project5/"><img class="icon-img" src="https://image.flaticon.com/icons/svg/148/148843.svg"><span class="menu-title"> Map Json Fetch</span></a>
+              </div>
+            <div class='sidebar'>
+                <div><img width="200" height="200" class="img-profil" src="https://image.flaticon.com/icons/png/512/1072/1072368.png">
+                <p class="page-title">
+                Mobile Map - Place Review<br>
+                Menggunakan Promise and Fetch untuk mengambil data json</p>
+                
+                </div>
+                </div>
+            <div id="konten">
+                    <div id="mapid"></div>
+                </div>
+                <div class="title  item1" id="title"></div>
+                <div class="showimg">
+                     <div class="image-low-res" id="picture"></div>
+                 </div>
+                
+                <div class="showrv" >
+                        <span class="reviewtext" id="review"></span>
+                </div>
+                
+            <div class='footer'>
+                <p>&copy; 2018. <a href="https://www.instagram.com/rsuregar">Muhammad Rahmat</a></p>
+            </div> 
+        </div> 
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+   	<script src="js/app.js"></script>
+   	<script>
+    // let nextkey =0;
+    let config = {
+    apiKey: "AIzaSyCFJQ7CEGU-lvVdGN4biH5P1Ce_vwVKBPQ",
+    authDomain: "pwa-mws.firebaseapp.com",
+    databaseURL: "https://pwa-mws.firebaseio.com",
+    projectId: "pwa-mws",
+    storageBucket: "pwa-mws.appspot.com",
+    messagingSenderId: "1015311027079"
+  };
+  firebase.initializeApp(config);
+
+      let database = firebase.database();
+	  const dbRef = firebase.database().ref();
+	  const mapsRef = dbRef.child('getMap');
+
+// createElement
+const addmapBtnUI = document.getElementById("add-map-btn");
+addmapBtnUI.addEventListener("click", addmapBtnClicked);
+
+function addmapBtnClicked() {
+
+	const mapsRef = dbRef.child('getMap');
+	const addmapInputsUI = document.getElementsByClassName("map-input");
+ 	// this object will hold the new map information
+    let newmap = {};
+    // loop through View to get the data for the model 
+    for (let i = 0, len = addmapInputsUI.length; i < len; i++) {
+        let key = addmapInputsUI[i].getAttribute('data-key');
+        let value = addmapInputsUI[i].value;
+        newmap[key] = value;
+        // alert(newmap);
+    }
+
+   mapsRef.push(newmap, function(){
+   alert('view json data in < a href="https://pwa-mws.firebaseio.com/getMap.json>here</a>"');
+   location.reload();
+ })
+}
+</script>
+<!-- <script src="/js/index.js"></script> -->
+</body>
+</html>

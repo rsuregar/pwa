@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ff6600" />
+  <link rel="icon" href="https://avatars1.githubusercontent.com/u/33717396?s=400&v=4">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+
+  <title>MapBox Leaflet.js</title>
+<link rel="stylesheet" href="../project2/leafletjs/leaflet.css" />
+<script src="../project2/leafletjs/leaflet.js"></script>
+
+  <style>   
+
+  body {
+	  background-color: #fafafa;
+	  -moz-transition: all 0.5s;
+	  -o-transition: all 0.5s;
+	  -webkit-transition: all 0.5s;
+	  transition: all 0.5s;
+	  font-family: 'Roboto'; }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+	  font-weight: bold; }
+
+	button,
+	input,
+	select,
+	a {
+	  outline: none !important; 
+
+	}
+
+    .big{
+    	font-size: x-large;
+    	/*border-radius: 5px;*/
+    }
+
+    .image-low-res {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    
+    input[type=text], select, textarea {
+    	/*width: 100%;*/
+     max-width: 500px;
+     box-sizing: border-box;
+    /*width: 100%;*/
+    /*padding: 12px;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /*resize: vertical;*/
+	}
+
+    input[type=text]:focus {
+        background-color: rgba(0,0,0,0.45);
+        color: #fff;
+   }
+
+
+
+    .button1 {background-color: #4CAF50; color: #fff} /* Green */
+	.button2 {background-color: #008CBA; color: #fff} /* Blue */
+	.button3 {background-color: #f44336; color: #fff} /* Red */ 
+	.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+	.button5 {background-color: #555555; color: #fff} /* Black */
+
+	.container {      
+	  	display: inline-grid;   
+	  	width: 100%;   
+	  	/*justify-items: center;*/
+       /*align-items: center; */
+	  	/*grid-template-columns:  100px 100px 100px 100px; */
+	  	/*grid-template-columns:  1fr 1fr 1fr 1fr;*/
+		grid-template-columns: repeat(4, 1fr);
+	  	grid-template-rows: 30px 450px 350px 30px;      
+	  	grid-gap: 2px; 
+
+
+
+      }   
+      
+      .showimg {  
+      display: grid;  
+      /* grid-area: img; */
+      grid-column: 1/3;
+      background: #b71540;
+  }  
+
+    .showrv {
+        /* grid-area: rv; */
+        grid-column: 3/5;
+        color: #fff;
+        /* margin-left: 20px; */
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        background: #079992;
+    }
+
+	.menu {      
+		background: #29434e;      
+		grid-column-start: 1;  
+		grid-column-end: 5;   
+		display: flex;
+  		align-items: center;
+		justify-content: left;
+	} 
+
+	.menu span{
+		vertical-align: 
+	}  
+
+	.sidebar {      
+		background: #29434e;      
+		display: flex;
+		grid-row-start: 2;      
+		grid-row-end: 3;      
+		grid-column-end: 1/2;  
+		overflow: auto;
+		/*align-items: center;*/
+		justify-content: center;
+	}   
+
+	#konten {  
+	    display: grid;    
+		grid-column: 2/5; 
+		/*align-items: center;
+		justify-content: center;  */
+	}   
+
+	/*#content {
+		  display: flex;
+		}*/
+
+	#mapid { 
+		width: 100%;
+	}
+
+	.item1{
+		background: #e55039;
+	}
+
+	.item2{
+		background: #079992;
+	}
+
+	.item3{
+		background: #b71540;
+	}
+
+	.item4{
+		background: #fa983a;
+	}
+
+	.konten span{
+		/*text-align: center;*/
+		margin-right: 20px;
+		color: #fff;
+		font-weight: 300;
+	}
+
+	.footer {  
+	    display: flex;    
+		background: #29434e;      
+		grid-column: 1/5;      
+		grid-row : 4/4;  
+		vertical-align: middle;
+		align-items: center;
+		justify-content: center; 
+		color: white;
+	} 
+
+	.icon-img{
+		width: 20px;
+		margin-left: 10px;
+		margin-right: 5px;
+		height: 20px;
+		align-self: center;
+		color: white;
+	}
+   
+	.img-apps{
+		width: 80px;
+		margin-right:  20px;
+		margin-left:  20px;
+		height: 80px;
+		align-self: center;
+		border-radius: 50%;
+    object-fit: cover;
+		
+	}
+
+	a:link{
+		text-decoration:none;
+	}
+    
+    .menu a{
+    	color: white;
+    	margin-right: 10px;
+    	vertical-align: middle;
+    	display: flex;
+    	align-items: center;
+    	justify-content: left;
+
+    }
+
+    .footer a{
+    	color: #fff;
+    }
+
+    .konten a{
+    	color: white;
+    	margin-right: 10px;
+    	vertical-align: middle;
+    	display: flex;
+    	align-items: center;
+    	justify-content: left;
+
+    }
+
+	.img-profil{
+	display: flex;
+	margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    color: white;
+	}
+    
+    
+
+	@media (max-width: 480px) and (max-width: 700px){
+		.img-profil{
+    max-height: 70px;
+    max-width: 70px;
+	}
+	
+	.img-apps{
+		max-height: 70px;
+		max-width: 70px;
+	}
+
+	.page-title {
+	  font-size: 11px;
+	}
+
+	.footer{
+		font-size: 12px;
+	}
+}
+
+	.small{
+		font-size: 12px;
+	}
+
+	.page-title {
+	  padding-top: 2px;
+	  text-transform: capitalize;
+	  text-align: center;
+	  font-weight: 300;
+	  color: #fafafa;
+	}
+</style> 
+
+
+
+  
+</head>
+<body class="body">
+	<div class="container">
+	 	<div class='menu'">
+	 		<a href="../index.html"><img class="icon-img" src="https://image.flaticon.com/icons/png/512/660/660699.png"><span>Home</span></a>
+	 	</div>
+	    <div class='sidebar'>
+	    	<div><img width="200" height="200" class="img-profil" src="https://image.flaticon.com/icons/svg/265/265725.svg">
+	    	<p class="page-title">
+	    		Simple MapBox</p>
+	    	</div>
+	    	</div>
+	    <div class="item4" id="konten">
+	    		<div id="mapid"></div>
+            </div>
+            
+            <div class="showimg">
+                    <div class="image-low-res" id="picture"></div>
+                </div>
+                <div class="showrv" id="review">
+                </div>
+	    	
+	    <div class='footer'>
+	    	<p>&copy; 2018. <a href="https://www.instagram.com/rsuregar">Muhammad Rahmat</a></p>
+	    </div> 
+	</div> 
+<!-- <div id="mapid"></div> -->
+<script type="text/javascript">
+	let mymap = L.map('mapid').setView([-5.134389,119.490796], 14);
+            L.tileLayer(
+                'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                    maxZoom: 25,
+                    // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    //     '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    //     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox.streets',
+                    accessToken: 'pk.eyJ1IjoiZHJlaXplaG4iLCJhIjoiY2ptYXE4dDk4MW8wcjNrcXF4bzRidWZtZyJ9.D9JgNuOxJATtfdWuxj4I0g'
+                }).addTo(mymap);
+    
+            var myIcon = L.icon({
+                iconUrl: 'https://image.flaticon.com/icons/svg/1139/1139548.svg',
+                iconSize:     [39, 39]
+            });
+    
+           
+           let promise = '';
+           var marker =  fetch('lokasi.json', {mode: 'cors'})
+                .then(function(response) {
+                    // console.log(response);
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    promise = myJson;
+                })
+                .then(function(){  
+                        for (i in promise) {
+                            // console.log(promise[i].img);
+                        var latlng = L.latLng({lat: promise[i].lat, lng:promise[i].long});
+                        
+                        var mapku = L.marker( latlng, {icon: myIcon} )
+                        .bindTooltip(promise[i].name)
+                        .addTo(mymap);
+                        mapku.review = promise[i].review;
+                        mapku.img = promise[i].img;
+
+                                mapku.on('click', function (e) {
+                                // console.log(this.review);
+                                let img = document.getElementById('picture');
+                                img.style.backgroundImage = "url("+this.img+")";
+                                document.getElementById('review').innerHTML = this.review;
+                            });
+                    }
+        });
+</script>
+</body>
+</html>

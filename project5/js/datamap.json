@@ -1,0 +1,74 @@
+{
+  "0" : {
+    "img" : "https://igx.4sqi.net/img/general/600x600/68659282_nAjxrbGoCUBEiNaH2atI-J2T1TwXiyMqFi0Q8t8yHdw.jpg",
+    "lat" : -5.14142,
+    "long" : 119.479224,
+    "name" : "Coffee Crime Perintis",
+    "review" : "It sounds easy enough. Brew the coffee, take out the water, keep the stuff that’s left, package it, and let the consumer put the water back in later",
+    "skor" : 4.5
+  },
+  "1" : {
+    "img" : "https://dokterkiky.com/wp-content/uploads/2016/03/PhotoGrid_1457459194686.jpg",
+    "lat" : -5.14058,
+    "long" : 119.482571,
+    "name" : "Rhapsody Cafe",
+    "review" : "I recently led a tasting of fine coffees at a consumer event. Only one of these coffees was natural-processed",
+    "skor" : 4.1
+  },
+  "2" : {
+    "img" : "https://fadhlancessar.files.wordpress.com/2015/06/final_1.jpg",
+    "lat" : -5.143054,
+    "long" : 119.475115,
+    "name" : "Klabers Coffee",
+    "review" : "As we sweat our way into summer 2018, enjoying coffee chilled on ice is peaking as the latest specialty coffee trend",
+    "skor" : 4.4
+  },
+  "3" : {
+    "img" : "https://i0.wp.com/makassarkuliner.com/wp-content/uploads/2016/08/rekow1.jpg",
+    "lat" : -5.144088,
+    "long" : 119.475272,
+    "name" : "Republik Kongkow",
+    "review" : "Espresso, of course, has long appeared in various cold-blended café concoctions like frappés and smoothies",
+    "skor" : 4.3
+  },
+  "4" : {
+    "img" : "https://1.bp.blogspot.com/-XGEpDb8Z7aQ/Vri7LqMHjiI/AAAAAAAALiU/sPMyN9JCZko/s320/Lowongan-Kerja-Karyawati-Cafe-N-Resto-Nugget-Perintis.jpg",
+    "lat" : -5.146236,
+    "long" : 119.470018,
+    "name" : "ArtWork Cafe",
+    "review" : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+    "skor" : 4.2
+  },
+  "5" : {
+    "img" : "https://i0.wp.com/apakabarkampus.com/wp-content/uploads/2018/05/IMG-20180531-WA0072.jpg?resize=300%2C213",
+    "lat" : -5.133814,
+    "long" : 119.484736,
+    "name" : "Cafe Sarjana",
+    "review" : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+    "skor" : 4.6
+  },
+  "-LNxnvsYs7DkRP52Vg4V" : {
+    "img" : "https://images.pexels.com/photos/1260591/pexels-photo-1260591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "lat" : "-5.1398247",
+    "long" : "119.4898493",
+    "name" : "Cafe Masa Kini",
+    "review" : "Mantap",
+    "skor" : "3.7"
+  },
+  "-LNxooXb437vBu2qVWbA" : {
+    "img" : "https://i.ytimg.com/vi/QgwnSKN213A/maxresdefault.jpg",
+    "lat" : "-5.140433",
+    "long" : "119.490822",
+    "name" : "Masjid Kampus Unhas",
+    "review" : "Nyaman dan Menenangkan",
+    "skor" : "5"
+  },
+  "-LNxqBrAowisws7RFuKJ" : {
+    "img" : "https://lh5.googleusercontent.com/p/AF1QipM1P8nsXwPdeZDKnDbh_YQFLf190LM24CXenHVW=w408-h306-k-no",
+    "lat" : "-5.128291",
+    "long" : "119.499007",
+    "name" : "Bintang Dilangit Perintis",
+    "review" : "Banyak Aksesoris dijual disini.",
+    "skor" : "4"
+  }
+}

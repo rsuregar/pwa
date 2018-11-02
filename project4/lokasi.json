@@ -1,0 +1,50 @@
+{ 
+    "1" : {
+      "name"    : "Coffee Crime Perintis",
+      "lat"     : -5.14142,
+      "long"    : 119.479224,
+      "img"     : "https://igx.4sqi.net/img/general/600x600/68659282_nAjxrbGoCUBEiNaH2atI-J2T1TwXiyMqFi0Q8t8yHdw.jpg",
+      "review"  : "It sounds easy enough. Brew the coffee, take out the water, keep the stuff that’s left, package it, and let the consumer put the water back in later",
+      "skor"    : 4.5
+    },
+    "2" : {
+        "name"    : "Rhapsody Cafe",
+        "lat"     : -5.140580,
+        "long"    : 119.482571,
+        "img"     : "https://dokterkiky.com/wp-content/uploads/2016/03/PhotoGrid_1457459194686.jpg",
+        "review"  : "I recently led a tasting of fine coffees at a consumer event. Only one of these coffees was natural-processed",
+        "skor"    : 4.1
+    },
+    "3" : {
+        "name"    : "Klabers Coffee",
+        "lat"     : -5.143054,
+        "long"    : 119.475115,
+        "img"     : "https://fadhlancessar.files.wordpress.com/2015/06/final_1.jpg",
+        "review"  : "As we sweat our way into summer 2018, enjoying coffee chilled on ice is peaking as the latest specialty coffee trend",
+        "skor"    : 4.4
+    },
+    "4" : {
+        "name"    : "Republik Kongkow",
+        "lat"     : -5.144088,
+        "long"    : 119.475272,
+        "img"     : "https://i0.wp.com/makassarkuliner.com/wp-content/uploads/2016/08/rekow1.jpg",
+        "review"  : "Espresso, of course, has long appeared in various cold-blended café concoctions like frappés and smoothies",
+        "skor"    : 4.3
+    },
+    "5" : {
+        "name"    : "ArtWork Cafe",
+        "lat"     : -5.146236,
+        "long"    : 119.470018,
+        "img"     : "https://1.bp.blogspot.com/-XGEpDb8Z7aQ/Vri7LqMHjiI/AAAAAAAALiU/sPMyN9JCZko/s320/Lowongan-Kerja-Karyawati-Cafe-N-Resto-Nugget-Perintis.jpg",
+        "review"  : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+        "skor"    : 4.2
+    },
+    "6" : {
+        "name"    : "Cafe Sarjana",
+        "lat"     : -5.133814, 
+        "long"    : 119.484736,
+        "img"     : "https://i0.wp.com/apakabarkampus.com/wp-content/uploads/2018/05/IMG-20180531-WA0072.jpg?resize=300%2C213",
+        "review"  : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+        "skor"    : 4.6
+    }
+  }

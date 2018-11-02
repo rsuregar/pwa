@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ff6600" />
+  <link rel="icon" href="https://avatars1.githubusercontent.com/u/33717396?s=400&v=4">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+
+  <title>Mobile Map</title>
+  <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+  <link rel="stylesheet" href="https://pwa-mws.firebaseapp.com/project2/leafletjs/leaflet.css"/>
+  <script src="https://pwa-mws.firebaseapp.com/project2/leafletjs/leaflet.js"></script>
+
+
+</head>
+<body class="body">
+	<div class="container">
+	 	<div class='menu'">
+	 		<a href="../index.html"><img class="icon-img" src="https://image.flaticon.com/icons/png/512/660/660699.png"><span>Home</span></a>
+	 	</div>
+	    <div class='sidebar'>
+	    	<div><img width="200" height="200" class="img-profil" src="https://image.flaticon.com/icons/png/512/1072/1072368.png">
+	    	<p class="page-title">
+	    		Mobile Map - Place, Image and Review</p>
+	    	</div>
+	    	</div>
+	    <div class="item4" id="konten">
+	    		<div id="mapid"></div>
+		</div>
+		<div class="showimg">
+			<div id="picture"></div>
+		</div>
+		<div class="showrv">
+			<div id="review"></div>
+		</div>
+	    <div class='footer'>
+	    	<p>&copy; 2018. <a href="https://www.instagram.com/rsuregar">Muhammad Rahmat</a></p>
+		</div> 
+		
+	</div> 
+
+
+	<script>
+        let mymap = L.map('mapid').setView([-5.134389,119.490796], 13);
+        L.tileLayer(
+            'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                maxZoom: 14,
+                // attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                //     '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                //     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1IjoiZHJlaXplaG4iLCJhIjoiY2ptYXE4dDk4MW8wcjNrcXF4bzRidWZtZyJ9.D9JgNuOxJATtfdWuxj4I0g'
+            }).addTo(mymap);
+        var arr_marker = [
+		    ["Coffee Crime Perintis", -5.141420, 119.479224],
+            ["Rhapsody Cafe", -5.140580, 119.482571],
+            ["Ardan Masogi Coffeeshop", -5.133059, 119.496989],
+            ["Republik Kongkow", -5.144088, 119.475272],
+            ["ArtWork Cafe", -5.146236, 119.470018]
+        ];
+
+        // var arr_marker = fetch('https://pwa-mws.firebaseapp.com/project4/lokasi.json', {mode: 'cors'})
+        //     .then(function(response) {
+        //         return response.text();
+               
+        //     })
+        //     .then(function(text) {
+        //         // console.log('Request successful', text);
+        //     })
+        //     .catch(function(error) {
+        //         log('Request failed', error)
+        //     });
+
+        var myIcon = L.icon({
+			iconUrl: 'https://image.flaticon.com/icons/svg/1139/1139548.svg',
+			// shadowUrl: 'leaf-shadow.png',
+			iconSize:     [39, 39], // size of the icon
+			// shadowSize:   [50, 64], // size of the shadow
+			// iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+			// shadowAnchor: [4, 62],  // the same for the shadow
+			// popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+		});
+		// var index=1;              
+        for (m of arr_marker) {
+            var test = [m[1], m[2]]
+			var mapku = L.marker(test, {icon: myIcon})
+			.bindTooltip(m[0])
+			.addTo(mymap);
+
+			mapku.on('click', function (e) {
+            document.getElementById('picture').innerHTML =
+            '<img src="http://www.nusakini.com/upload/image/media/AULrcq0lk1_1461475908.jpg" style="max-height:200px; width:100%" >';
+            document.getElementById('review').innerHTML = m[0];
+        });
+            
+        }
+
+		
+        
+		// function showPopup(m,index){
+        //     var popup = L.popup({autoClose:false})
+        //     .setLatLng(m)
+        //     // .setContent("Restoran terbaik Ke-"+index+" disini!")
+        //     .openOn(mymap);
+        // }
+        
+        
+    </script>
+
+</body>
+</html>

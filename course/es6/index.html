@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Course</title>
+</head>
+<body>
+<script>
+var data = get('lokasi.json');
+data.onload = function(){
+	analyze(this.responseText);
+};
+
+console.log(data);
+</script>
+</body>
+</html>

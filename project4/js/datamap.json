@@ -1,0 +1,74 @@
+{
+  "0" : {
+    "img" : "../images/coffeecrime.jpg",
+    "lat" : -5.14142,
+    "long" : 119.479224,
+    "name" : "Coffee Crime Perintis",
+    "review" : "It sounds easy enough. Brew the coffee, take out the water, keep the stuff that’s left, package it, and let the consumer put the water back in later",
+    "skor" : 4.5
+  },
+  "1" : {
+    "img" : "../images/rhapsodycafe.jpg",
+    "lat" : -5.14058,
+    "long" : 119.482571,
+    "name" : "Rhapsody Cafe",
+    "review" : "I recently led a tasting of fine coffees at a consumer event. Only one of these coffees was natural-processed",
+    "skor" : 4.1
+  },
+  "2" : {
+    "img" : "../images/klabbers.jpg",
+    "lat" : -5.143054,
+    "long" : 119.475115,
+    "name" : "Klabers Coffee",
+    "review" : "As we sweat our way into summer 2018, enjoying coffee chilled on ice is peaking as the latest specialty coffee trend",
+    "skor" : 4.4
+  },
+  "3" : {
+    "img" : "../images/konkow.jpg",
+    "lat" : -5.144088,
+    "long" : 119.475272,
+    "name" : "Republik Kongkow",
+    "review" : "Espresso, of course, has long appeared in various cold-blended café concoctions like frappés and smoothies",
+    "skor" : 4.3
+  },
+  "4" : {
+    "img" : "../images/artwork.jpg",
+    "lat" : -5.146236,
+    "long" : 119.470018,
+    "name" : "ArtWork Cafe",
+    "review" : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+    "skor" : 4.2
+  },
+  "5" : {
+    "img" : "../images/cafesarjana.jpg",
+    "lat" : -5.133814,
+    "long" : 119.484736,
+    "name" : "Cafe Sarjana",
+    "review" : "The other samples were all washed coffees, processed by drying the beans after the fruit skin and flesh",
+    "skor" : 4.6
+  },
+  "6" : {
+    "img" : "../images/cafemasakini.jpeg",
+    "lat" : "-5.1398247",
+    "long" : "119.4898493",
+    "name" : "Cafe Masa Kini",
+    "review" : "Mantap",
+    "skor" : "3.7"
+  },
+  "7" : {
+    "img" : "../images/meskam.jpg",
+    "lat" : "-5.140433",
+    "long" : "119.490822",
+    "name" : "Masjid Kampus Unhas",
+    "review" : "Nyaman dan Menenangkan",
+    "skor" : "5"
+  },
+  "8" : {
+    "img" : "../images/bintang.jpg",
+    "lat" : "-5.128291",
+    "long" : "119.499007",
+    "name" : "Bintang Dilangit Perintis",
+    "review" : "Banyak Aksesoris dijual disini.",
+    "skor" : "4"
+  }
+}

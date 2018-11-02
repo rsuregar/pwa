@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRUD PWA</title>
+	<style type="text/css">
+		.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+  color: #333333;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+  color: #333333;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: #000;
+}
+
+/* Demo Styles */
+html,
+
+
+a {
+  color: inherit;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn {
+  background-color: #fff;
+  padding: 1em 1.5em;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.btn i {
+  padding-right: 0.3em;
+}
+
+
+
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+
+<h1>Firebase CRUD with Vanilla Javascript<br/><small><em>01 Read Data</em></small></h1>
+<div class="container">
+  <div class="interior">
+    <a type="button" class="btn" href="#open-modal"><i class="fas fa-external-link-alt"></i> Basic CSS-Only Modal</a>
+  </div>
+</div>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <h1>Voilà!</h1>
+    <div>
+      <form>
+    <h2>Add User</h2>
+    name:<br>
+    <input type='text' data-key='name' class='user-input'><br>
+    age:<br>
+    <input type='text' data-key='age' class='user-input'><br>
+    email:<br>
+    <input type='text' data-key='email' class='user-input'><br>
+    <button type='button' id="add-user-btn">add user</button>
+ </form>
+    </div>
+    </div>
+</div>
+ <!-- add user module -->
+<!-- <section id="add-user-module" >
+  <form>
+    <h2>Add User</h2>
+    name:<br>
+    <input type='text' data-key='name' class='user-input'><br>
+    age:<br>
+    <input type='text' data-key='age' class='user-input'><br>
+    email:<br>
+    <input type='text' data-key='email' class='user-input'><br>
+    <button type='button' id="add-user-btn">add user</button>
+ </form>
+</section>
+ <ul id="userList"></ul>
+
+<div id="userDetail">
+ <p >Name :<strong class="detailName"></strong></p>
+ <p >Age: <strong class="detailAge"></strong></p>
+ <p >Email: <strong class="detailEmail"></strong></p>
+ </div> -->
+
+ 
+
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+   <script>
+    let nextkey =0;
+    let config = {
+    apiKey: "AIzaSyCFJQ7CEGU-lvVdGN4biH5P1Ce_vwVKBPQ",
+    authDomain: "pwa-mws.firebaseapp.com",
+    databaseURL: "https://pwa-mws.firebaseio.com",
+    projectId: "pwa-mws",
+    storageBucket: "pwa-mws.appspot.com",
+    messagingSenderId: "1015311027079"
+  };
+  firebase.initializeApp(config);
+
+    let database = firebase.database();
+  
+	  const dbRef = firebase.database().ref();
+	  const usersRef = dbRef.child('users');
+
+// createElement
+const addUserBtnUI = document.getElementById("add-user-btn");
+addUserBtnUI.addEventListener("click", addUserBtnClicked);
+
+function addUserBtnClicked() {
+
+	const usersRef = dbRef.child('users');
+
+	const addUserInputsUI = document.getElementsByClassName("user-input");
+
+ 	// this object will hold the new user information
+    let newUser = {};
+
+    // loop through View to get the data for the model 
+    for (let i = 0, len = addUserInputsUI.length; i < len; i++) {
+
+        let key = addUserInputsUI[i].getAttribute('data-key');
+        let value = addUserInputsUI[i].value;
+        newUser[key] = value;
+    }
+
+
+   usersRef.push(newUser, function(){
+   alert("data has been inserted");
+ })
+   
+
+
+}
+
+
+
+
+   
+    
+  </script>
+</body>
+</html>
